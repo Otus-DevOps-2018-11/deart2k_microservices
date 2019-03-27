@@ -1,0 +1,40 @@
+FROM alpine:latest
+RUN apk update \
+&& apk del build-base ruby-* \
+&& apk --no-cache add ruby \
+           ruby-bigdecimal \
+           ruby-bundler \
+           ruby-io-console \
+           ruby-irb \
+           ca-certificates \
+           libressl \
+           less \
+           build-base \
+           ruby-dev \
+           ruby-json \
+           libressl-dev \
+&& bundle config build.nokogiri --use-system-libraries \
+&& bundle config git.allow_insecure true \
+&& gem install json --no-rdoc --no-ri \
+&& gem install bundler --no-ri --no-rdoc \
+&& gem cleanup \
+&& rm -rf /usr/lib/ruby/gems/*/cache/* \
+          /var/cache/apk/* \
+          /tmp/* \
+          /var/tmp/*
+
+
+ENV APP_HOME /app
+RUN mkdir $APP_HOME
+
+WORKDIR $APP_HOME
+ADD Gemfile* $APP_HOME/
+RUN bundle install
+ADD . $APP_HOME
+
+ENV POST_SERVICE_HOST post
+ENV POST_SERVICE_PORT 5000
+ENV COMMENT_SERVICE_HOST comment
+ENV COMMENT_SERVICE_PORT 9292
+
+CMD ["puma"]

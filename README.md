@@ -95,4 +95,3 @@ docker images
 * Создан docker volume - docker volume create reddit_db
 * Контейнеры перезапущены, к mongodb подключен docker volume
 * Добавлен новый пост, контенеры перезапущены, созданный пост остался на месте 
-

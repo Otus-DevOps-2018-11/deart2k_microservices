@@ -112,3 +112,27 @@ docker images
 ## Как проверить работоспособность:
 * Перейти по ссылке  http://ip_address:9292
 
+# Выполнено ДЗ № 18
+
+* [x]  Основное ДЗ
+* [ ]  Задание со *
+
+## В процессе сделано:
+* Создана вм коммандой:
+
+  ```bash
+
+gcloud compute instances create gitlab-ci \
+--image-project=ubuntu-os-cloud \
+--image-family=ubuntu-1604-lts \
+--zone europe-west3-a \
+--machine-type n1-standard-1 \
+--tags http-server,https-server
+
+  ```
+* На новом сервере созданы необходимые директории и запущен контейнер gitlab
+* Создана группа, проект и загружено содержимое репозиторя microservices, lобавлен файл .gitlab-ci.yml
+* Запущен и зарегистрирован gitlab-runne
+* Добавлен исходный код reddit в репозиторий, добавлены тесты в gitlab-ci
+* Добавлены окружения dev, stage и production
+* Добавлено создание динамического окружения

@@ -136,3 +136,35 @@ gcloud compute instances create gitlab-ci \
 * Добавлен исходный код reddit в репозиторий, добавлены тесты в gitlab-ci
 * Добавлены окружения dev, stage и production
 * Добавлено создание динамического окружения
+
+
+# Выполнено ДЗ № 19
+
+* [x]  Основное ДЗ
+* [ ]  Задание со *
+
+## В процессе сделано:
+
+* Подготовка окружения
+Создано правило Prometheus и Puma и с помощью docker-machine создан docker-host
+
+* Запуск Prometheus
+Запустил Prometheus внутри docker контейнера
+
+* Создание Docker образа
+Создал docker файл monitoring/prometheus/Dockerfile
+В monitoring/prometheus создал файл prometheus.yml и собрал Docker образ
+
+# Образы микросервисов
+Собрал образовы микросервисов при помощи скриптов docker_build.sh
+
+# Запуск 
+Изменил docker-compose.yml убрав из него процесс сборки образов и добавив сервис Prometheus
+Запустил сервисы, проверил из работу и работу мониторинга Prometheus (метрики ui_health*) 
+
+# Сбор метрик хоста
+Добавил сервис node-exporter в docker-compose.yml и prometheus.yml, пересобрал образ с prometheus.
+перезапустил сервисы.
+Проверил доступность нового endpoint-а и получил информацию об использовании CPU на docker-host
+
+Залил собранные образы на DockerHub

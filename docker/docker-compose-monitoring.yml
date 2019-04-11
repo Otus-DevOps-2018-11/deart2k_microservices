@@ -56,7 +56,7 @@ services:
     - back_net
 
   alertmanager:
-    image: ${USER_NAME}/alertmanager
+    image: ${USERNAME}/alertmanager
     command:
     - '--config.file=/etc/alertmanager/config.yml'
     ports:

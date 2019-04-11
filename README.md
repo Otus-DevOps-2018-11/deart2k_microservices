@@ -168,3 +168,18 @@ gcloud compute instances create gitlab-ci \
 Проверил доступность нового endpoint-а и получил информацию об использовании CPU на docker-host
 
 Залил собранные образы на DockerHub
+
+
+# Выполнено ДЗ № 21
+Мониторинг приложения и инфраструктуры
+
+* [x]  Основное ДЗ
+* [ ]  Задание со *
+
+## В процессе сделано:
+С помощью docker-machine создан docker-host GCE и настроено локальное окружение на работу с ним, открыты порты в файрволле
+Создан отдельный файл docker-compose-monitoring.yml для сервисов мониторинга
+Добавлен cAdvisor для наблюдения за состоянием Docker container и host
+Добавлена Grafana для визуализации данных из Prometheus, импортирован dashboard DockerMonitoring и настроены дашборды UI_Service_Monitoring и Business_Logic_Monitoring
+Добавлен Alert на базе Alertmanager
+Загружены собранные образы на DockerHub и удален docker-host

@@ -183,3 +183,16 @@ gcloud compute instances create gitlab-ci \
 Добавлена Grafana для визуализации данных из Prometheus, импортирован dashboard DockerMonitoring и настроены дашборды UI_Service_Monitoring и Business_Logic_Monitoring
 Добавлен Alert на базе Alertmanager
 Загружены собранные образы на DockerHub и удален docker-host
+
+
+Выполнено ДЗ № 23
+
+Основное задание:
+
+пересобраны образы приложений
+развернул EFK (elasticsearch запустился только с  переменной окружения - discovery.type=single-node)
+настроил docker-compose на вывод логов stdout в fluentd для контейнеров post и ui.
+добавил фильтр с регулярным выражением для ui.
+замениа регулярное выражение на грок-шаблоны.
+добавил контейнер с zipkin и запустил приложение с параметром ZIPKIN_ENABLED=true
+

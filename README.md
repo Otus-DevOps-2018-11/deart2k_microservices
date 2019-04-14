@@ -185,7 +185,7 @@ gcloud compute instances create gitlab-ci \
 Загружены собранные образы на DockerHub и удален docker-host
 
 
-Выполнено ДЗ № 23
+# Выполнено ДЗ № 23
 
 Основное задание:
 
@@ -196,3 +196,15 @@ gcloud compute instances create gitlab-ci \
 замениа регулярное выражение на грок-шаблоны.
 добавил контейнер с zipkin и запустил приложение с параметром ZIPKIN_ENABLED=true
 
+
+# Выполнено ДЗ № 25
+Введение в Kubernetes. 
+
+* [x]  Основное ДЗ
+* [ ]  Задание со *
+
+## В процессе сделано:
+Созданы deployment-ты для запустка приложения (для ui, comment, post и mongodb)
+Развернут кластер Kubernetes по инструкции https://github.com/kelseyhightower/kubernetes-the-hard-way
+Командой kubectl apply -f comment-deployment.yml  и аналогично для других сервисов выполнен деплой приложения и произведена проверка, что pod-поднялись
+Удален кластер kubernetes

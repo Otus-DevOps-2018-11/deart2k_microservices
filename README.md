@@ -208,3 +208,21 @@ gcloud compute instances create gitlab-ci \
 Развернут кластер Kubernetes по инструкции https://github.com/kelseyhightower/kubernetes-the-hard-way
 Командой kubectl apply -f comment-deployment.yml  и аналогично для других сервисов выполнен деплой приложения и произведена проверка, что pod-поднялись
 Удален кластер kubernetes
+
+
+# Выполнено ДЗ №26 Kubernetes.  Запуск кластера и приложения.
+ 
+ * [x]  Основное ДЗ
+ * [ ]  Задание со *
+ 
+## В процессе сделано:
+* Установлен minikube
+* Написаны Deployment и Services для приложения reddit, полученный файлы опубликованы в miniukube
+* Установлен k8s в GCP, опубликован туда reddit 
+ 
+## Как запустить проект:
+* kubectl create -f  -n dev
+
+## Как проверить работоспособность:
+* Перейти по ссылке http://35.193.166.195:31153/
+ 
